@@ -6,12 +6,12 @@ import TicketsList from "./TicketsList";
 
 import { filtersArrayMock } from "../data/filtersMocks";
 import { ticketsMocks } from "../data/ticketsMocks";
-import Tabs from "./Tabs";
 
 const useStyle = createUseStyles({
   tickets: {
     display: "flex",
     justifyContent: "center",
+    alignItems: "flex-start",
   },
 });
 
