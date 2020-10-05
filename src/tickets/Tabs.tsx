@@ -5,6 +5,7 @@ const useStyle = createUseStyles({
   buttons: {
     display: "flex",
     textTransform: "uppercase",
+    marginBottom: 20,
   },
   tabButton: {
     background: "#FFFFFF",
@@ -25,27 +26,29 @@ const useStyle = createUseStyles({
 
 interface IProps {
   selectedTab: string;
-  handleTabChange: Function;
+  handleTabChange: (tab: string) => void;
 }
 
 const Tabs = ({ selectedTab, handleTabChange }: IProps) => {
-  const styles = useStyle();
+  const style = useStyle();
 
   return (
-    <div>
+    <div className={style.buttons}>
       <button
-        className={`${styles.tabButton} ${
-          selectedTab === "cheapest" && styles.selected
+        className={`${style.tabButton} ${
+          selectedTab === "cheapest" && style.selected
         }`}
         onClick={() => handleTabChange("cheapest")}
+        type="button"
       >
         Самый дешевый
       </button>
       <button
-        className={`${styles.tabButton} ${
-          selectedTab === "fastest" && styles.selected
+        className={`${style.tabButton} ${
+          selectedTab === "fastest" && style.selected
         }`}
         onClick={() => handleTabChange("fastest")}
+        type="button"
       >
         Самый быстрый
       </button>
