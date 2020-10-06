@@ -1,11 +1,11 @@
 import React, { FunctionComponent } from "react";
+import { createUseStyles } from "react-jss";
 
 import {
   FilterArray,
   Filter,
   SelectedFiltersArray,
 } from "../data/filtersTypes";
-import { createUseStyles } from "react-jss";
 
 import selected from "../assets/selected.svg";
 
@@ -85,8 +85,8 @@ const FiltersSelection: FunctionComponent<FiltersSelection> = ({
   handleFilterChange,
   selectedFilters,
   filtersArray,
-}) => {
-  const style: Record<string, string> = useStyle();
+}: FiltersSelection) => {
+  const style = useStyle();
 
   return (
     <div className={style.filtersBlock}>
@@ -96,8 +96,9 @@ const FiltersSelection: FunctionComponent<FiltersSelection> = ({
           <li key={filter.id}>
             <button
               id={filter.id}
+              type="button"
               className={`${style.filtersElement} ${
-                selectedFilters.includes(filter.id) && style.checked
+                selectedFilters.includes(filter) && style.checked
               }`}
               onClick={() => {
                 handleFilterChange(filter.id);
