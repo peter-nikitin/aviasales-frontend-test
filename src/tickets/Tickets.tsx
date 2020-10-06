@@ -2,10 +2,14 @@ import React, { FunctionComponent, useState } from "react";
 import { createUseStyles } from "react-jss";
 
 import Filter from "./Filter";
-import TicketsList from "./TicketsList";
+import Tabs from "./Tabs";
+import Ticket from "./Ticket";
+
+import { TicketsArrayType, TicketType } from "../data/ticketsTypes";
+import { SelectedFiltersArray, Filter } from "../data/filtersTypes";
 
 import { filtersArrayMock } from "../data/filtersMocks";
-import { ticketsMocks } from "../data/ticketsMocks";
+import ticketsMocks from "../data/ticketsMocks";
 
 const useStyle = createUseStyles({
   tickets: {
@@ -13,22 +17,34 @@ const useStyle = createUseStyles({
     justifyContent: "center",
     alignItems: "flex-start",
   },
+  ticketsList: {
+    width: 502,
+  },
 });
 
+// TODO:поправить тип фильтров при клике
+
 const Tickets: FunctionComponent = () => {
-  const style: Record<"tickets", string> = useStyle();
-  const [selectedFilters, setSelectedFilters] = useState(["all"] as string[]);
+  const style = useStyle();
+  const [selectedFilters, setSelectedFilters] = useState([
+    {
+      label: "Все",
+      id: "all",
+      stopsCount: -1,
+    },
+  ] as Filter[]);
+  const [sorting, setSorting] = useState("cheapest");
 
   const handleSelectedFiltersChange = (clickedFilter: string) => {
     if (selectedFilters.includes(clickedFilter)) {
-      const newFilters: string[] = selectedFilters.filter(
+      const newFilters: Filter[] = selectedFilters.filter(
         (item) => item !== clickedFilter
       );
       setSelectedFilters(newFilters);
     } else {
-      let newFilters: string[] = [];
+      let newFilters: Filter[] = [];
       if (clickedFilter !== "all") {
-        newFilters = selectedFilters.filter((item) => item !== "all");
+        newFilters = selectedFilters.filter((item) => item.id !== "all");
       }
       setSelectedFilters([clickedFilter, ...newFilters]);
     }
@@ -41,7 +57,17 @@ const Tickets: FunctionComponent = () => {
         selectedFilters={selectedFilters}
         filtersArray={filtersArrayMock}
       />
-      <TicketsList tickets={ticketsMocks} />
+      <div className={style.ticketsList}>
+        <Tabs selectedTab={sorting} handleTabChange={setSorting} />
+
+        {ticketsMocks.map((ticket: TicketType) => (
+          <Ticket
+            price={ticket.price}
+            carrier={ticket.carrier}
+            segments={ticket.segments}
+          />
+        ))}
+      </div>
     </div>
   );
 };
