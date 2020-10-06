@@ -44,7 +44,7 @@ const Ticket: FunctionComponent<TicketType> = ({
   return (
     <div className={style.ticket}>
       <div className={style.priceLine}>
-        <div className={style.price}>{price} Р</div>
+        <div className={style.price}>{price.toLocaleString("ru-RU")} Р</div>
         <img src={carrierLogo} alt={carrier} />
       </div>
       {segments.map((currentSegment) => (
