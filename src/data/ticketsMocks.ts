@@ -1,6 +1,6 @@
 import { TicketType } from "./ticketsTypes";
 
-export const ticketsMocks: TicketType[] = [
+const ticketsMocks: TicketType[] = [
   {
     price: 47693,
     carrier: "EY",
@@ -7182,3 +7182,88 @@ export const ticketsMocks: TicketType[] = [
     ],
   },
 ];
+
+export const smallTicketsMock: TicketType[] = [
+  {
+    price: 47693,
+    carrier: "EY",
+    segments: [
+      {
+        origin: "MOW",
+        destination: "HKT",
+        date: "2020-10-11T22:36:00.000Z",
+        stops: [],
+        duration: 1260,
+      },
+      {
+        origin: "HKT",
+        destination: "MOW",
+        date: "2020-11-01T11:15:00.000Z",
+        stops: ["HKG", "KUL"],
+        duration: 1406,
+      },
+    ],
+  },
+  {
+    price: 21565,
+    carrier: "TG",
+    segments: [
+      {
+        origin: "MOW",
+        destination: "HKT",
+        date: "2020-10-12T05:54:00.000Z",
+        stops: ["AUH"],
+        duration: 782,
+      },
+      {
+        origin: "HKT",
+        destination: "MOW",
+        date: "2020-11-01T06:51:00.000Z",
+        stops: ["KUL"],
+        duration: 727,
+      },
+    ],
+  },
+  {
+    price: 17057,
+    carrier: "TG",
+    segments: [
+      {
+        origin: "MOW",
+        destination: "HKT",
+        date: "2020-10-12T14:53:00.000Z",
+        stops: ["DXB", "SHA"],
+        duration: 1396,
+      },
+      {
+        origin: "HKT",
+        destination: "MOW",
+        date: "2020-11-01T10:28:00.000Z",
+        stops: ["SHA", "KUL"],
+        duration: 1446,
+      },
+    ],
+  },
+  {
+    price: 75832,
+    carrier: "SU",
+    segments: [
+      {
+        origin: "MOW",
+        destination: "HKT",
+        date: "2020-10-12T00:43:00.000Z",
+        stops: [],
+        duration: 710,
+      },
+      {
+        origin: "HKT",
+        destination: "MOW",
+        date: "2020-11-01T05:54:00.000Z",
+        stops: [],
+        duration: 1887,
+      },
+    ],
+  },
+];
+
+export default ticketsMocks;
