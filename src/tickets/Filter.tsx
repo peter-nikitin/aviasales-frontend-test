@@ -3,7 +3,7 @@ import { createUseStyles } from "react-jss";
 
 import {
   FilterArray,
-  Filter,
+  FilterType,
   SelectedFiltersArray,
 } from "../data/filtersTypes";
 
@@ -92,7 +92,7 @@ const FiltersSelection: FunctionComponent<FiltersSelection> = ({
     <div className={style.filtersBlock}>
       <div className={style.header}>Количество пересадок</div>
       <ul className={style.filtersList}>
-        {filtersArray.map((filter: Filter) => (
+        {filtersArray.map((filter: FilterType) => (
           <li key={filter.id}>
             <button
               id={filter.id}

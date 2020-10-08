@@ -5,7 +5,7 @@ import FiltersSelection from "./Filter";
 import {
   filtersArrayMock,
   selectedFiltersArrayMock,
-} from "../data/filtersMocks";
+} from "../data/mocks/filtersMocks";
 import { SelectedFiltersArray } from "../data/filtersTypes";
 
 describe("Filters", () => {
@@ -14,7 +14,7 @@ describe("Filters", () => {
 
   it("should render header", () => {
     changeFilterTest = jest.fn();
-    selectedFiltersTest = [""];
+    selectedFiltersTest = [];
 
     const { getByText } = render(
       <FiltersSelection
@@ -30,7 +30,7 @@ describe("Filters", () => {
 
   it("should render first variant", () => {
     changeFilterTest = jest.fn();
-    selectedFiltersTest = [""];
+    selectedFiltersTest = [];
 
     const { getByText } = render(
       <FiltersSelection
@@ -46,7 +46,7 @@ describe("Filters", () => {
 
   it("should render varian '1 пересадка'", () => {
     changeFilterTest = jest.fn();
-    selectedFiltersTest = [""];
+    selectedFiltersTest = [];
 
     const { getByText } = render(
       <FiltersSelection
@@ -80,7 +80,7 @@ describe("Filters", () => {
 
   it("should handle click on filter with proper value", () => {
     changeFilterTest = jest.fn();
-    selectedFiltersTest = [""];
+    selectedFiltersTest = [];
 
     const { getByText } = render(
       <FiltersSelection
