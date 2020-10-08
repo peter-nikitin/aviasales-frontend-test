@@ -1,6 +1,8 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
 
+import SortingType from "../data/sortingTypes";
+
 const useStyle = createUseStyles({
   buttons: {
     display: "flex",
@@ -24,12 +26,12 @@ const useStyle = createUseStyles({
   },
 });
 
-interface IProps {
+interface TabsProps {
   selectedTab: string;
-  handleTabChange: (tab: string) => void;
+  handleTabChange: React.Dispatch<React.SetStateAction<SortingType>>;
 }
 
-const Tabs = ({ selectedTab, handleTabChange }: IProps) => {
+const Tabs = ({ selectedTab, handleTabChange }: TabsProps) => {
   const style = useStyle();
 
   return (
