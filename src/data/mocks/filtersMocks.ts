@@ -1,4 +1,4 @@
-import { FilterArray, SelectedFiltersArray } from "./filtersTypes";
+import { FilterArray, SelectedFiltersArray } from "../filtersTypes";
 
 export const filtersArrayMock: FilterArray = [
   {
