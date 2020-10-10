@@ -2,7 +2,7 @@ import React from "react";
 
 import { TicketType, SortingType } from "../data/types.d";
 
-import sortTickets from "../modules/sortTickets";
+import sortTickets from "./sortTickets";
 
 const useSortableTickets = (
   tickets: TicketType[],
