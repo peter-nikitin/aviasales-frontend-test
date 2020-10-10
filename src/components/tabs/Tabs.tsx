@@ -18,6 +18,27 @@ const useStyle = createUseStyles({
       bottom: 15,
     },
     textAlign: "center",
+    "&:first-child": {
+      borderRadius: "5px 0 0 5px",
+    },
+    "&:last-child": {
+      borderRadius: "0 5px 5px 0",
+    },
+    "&:focus": {
+      outline: "none",
+      background: "#2196F3",
+      color: "#FFFFFF",
+      border: "1px solid #2196F3",
+      opacity: "0.5",
+      cursor: "pointer",
+    },
+    "&:hover": {
+      background: "#2196F3",
+      color: "#FFFFFF",
+      border: "1px solid #2196F3",
+      opacity: "0.5",
+      cursor: "pointer",
+    },
   },
   selected: {
     background: "#2196F3",
