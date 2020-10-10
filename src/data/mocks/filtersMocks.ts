@@ -1,6 +1,6 @@
-import { FilterArray, SelectedFiltersArray } from "../filtersTypes";
+import { FilterType } from "../types";
 
-export const filtersArrayMock: FilterArray = [
+export const filtersArrayMock: FilterType[] = [
   {
     label: "Все",
     id: "all",
@@ -28,7 +28,7 @@ export const filtersArrayMock: FilterArray = [
   },
 ];
 
-export const selectedFiltersArrayMock: SelectedFiltersArray = [
+export const selectedFiltersMock: FilterType[] = [
   {
     label: "1 пересадка",
     id: "1_stop",

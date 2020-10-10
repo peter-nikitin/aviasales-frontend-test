@@ -1,4 +1,4 @@
-import { TicketType } from "../ticketsTypes";
+import { TicketType } from "../types";
 
 const ticketsMocks: TicketType[] = [
   {
