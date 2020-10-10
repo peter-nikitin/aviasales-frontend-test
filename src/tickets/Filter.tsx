@@ -98,7 +98,8 @@ const FiltersSelection: FunctionComponent<FiltersSelection> = ({
               id={filter.id}
               type="button"
               className={`${style.filtersElement} ${
-                selectedFilters.includes(filter) && style.checked
+                selectedFilters.filter((item) => item.id === filter.id).length >
+                  0 && style.checked
               }`}
               onClick={() => {
                 handleFilterChange(filter.id);
