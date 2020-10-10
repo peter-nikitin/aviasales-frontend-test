@@ -20,3 +20,12 @@ export type TicketType = {
   carrier: string;
   segments: Segment[];
 };
+
+export type SearchResultType = { tickets: TicketType[]; stop: boolean };
+
+export type SearchIdType = { searchId: string };
+
+export type GetAllTickets = (
+  setResults: React.Dispatch<React.SetStateAction<TicketType[]>>,
+  updateResults: (tickets: TicketType[]) => TicketType[]
+) => Promise;
