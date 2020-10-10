@@ -55,6 +55,17 @@ const SegmentInTicket: FunctionComponent<Segment> = ({
     return "";
   };
 
+  const humanDuration = (durationNumber: number): string => {
+    const momentDuration = moment.duration(durationNumber, "minutes");
+    const days = momentDuration.days();
+    const hours = momentDuration.hours();
+    const minutes = momentDuration.minutes();
+
+    const daysToShow = days > 0 ? `${days}д` : "";
+
+    return `${daysToShow} ${hours}ч ${minutes}м`;
+  };
+
   return (
     <div className={style.segmentLine}>
       <div className={style.third}>
@@ -68,9 +79,7 @@ const SegmentInTicket: FunctionComponent<Segment> = ({
       </div>
       <div className={style.third}>
         <div className={style.header}>В пути</div>
-        <div className={style.value}>
-          {moment().minute(duration).format("hh[ч] mm[м]")}
-        </div>
+        <div className={style.value}>{humanDuration(duration)}</div>
       </div>
       <div className={style.third}>
         <div className={style.header}>{drowStopsHeader(stops.length)}</div>
