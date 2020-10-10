@@ -8,7 +8,7 @@ describe("Sorting of tickets", () => {
   it("should sort by price", () => {
     const tickets: TicketType[] = [
       {
-        price: 222,
+        price: 74385,
         carrier: "EY",
         segments: [
           {
@@ -28,7 +28,7 @@ describe("Sorting of tickets", () => {
         ],
       },
       {
-        price: 111,
+        price: 35410,
         carrier: "EY",
         segments: [
           {
