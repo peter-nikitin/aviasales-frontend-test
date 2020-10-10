@@ -4,6 +4,7 @@ import { createUseStyles } from "react-jss";
 import Filter from "../filters/Filter";
 import Tabs from "../tabs/Tabs";
 import TicketList from "./TicketList";
+import Loader from "../common/Loader";
 
 import { FilterType, TicketType, SortingType } from "../../data/types.d";
 
@@ -25,6 +26,7 @@ interface TicketsProps {
   allFilters: FilterType[];
   sorting: string;
   setSorting: React.Dispatch<React.SetStateAction<SortingType>>;
+  isLoading: boolean;
 }
 
 const Tickets: FunctionComponent<TicketsProps> = ({
@@ -34,21 +36,28 @@ const Tickets: FunctionComponent<TicketsProps> = ({
   allFilters,
   sorting,
   setSorting,
+  isLoading,
 }: TicketsProps) => {
   const style = useStyle();
 
   return (
     <div className={style.tickets}>
-      <Filter
-        handleFilterChange={handleFilterChange}
-        selectedFilters={selectedFilters}
-        filtersArray={allFilters}
-      />
-      <div className={style.ticketsList}>
-        <Tabs selectedTab={sorting} handleTabChange={setSorting} />
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          <Filter
+            handleFilterChange={handleFilterChange}
+            selectedFilters={selectedFilters}
+            filtersArray={allFilters}
+          />
+          <div className={style.ticketsList}>
+            <Tabs selectedTab={sorting} handleTabChange={setSorting} />
 
-        <TicketList ticketsArray={tickets} />
-      </div>
+            <TicketList ticketsArray={tickets} />
+          </div>
+        </>
+      )}
     </div>
   );
 };
