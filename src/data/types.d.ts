@@ -1,3 +1,11 @@
+export type FilterType = {
+  label: string;
+  id: string;
+  stopsCount: number;
+};
+
+export type SortingType = "cheapest" | "fastest";
+
 export type Segment = {
   origin: string;
   destination: string;
@@ -12,5 +20,3 @@ export type TicketType = {
   carrier: string;
   segments: Segment[];
 };
-
-export type TicketsArrayType = TicketType[];
