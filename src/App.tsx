@@ -1,8 +1,8 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
 
-import Header from "./common/Header";
-import TicketsComponent from "./tickets/TicketsComponent";
+import Header from "./components/common/Header";
+import TicketsComponent from "./components/tickets/TicketsComponent";
 
 const useStyle = createUseStyles({
   App: {},
