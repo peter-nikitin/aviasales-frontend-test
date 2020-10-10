@@ -2,7 +2,7 @@ import React from "react";
 import { render, fireEvent, getByAltText } from "@testing-library/react";
 import Ticket from "./Ticket";
 
-import { TicketType } from "../data/ticketsTypes";
+import { TicketType } from "../data/types.d";
 
 describe("Ticket", () => {
   const ticket: TicketType = {

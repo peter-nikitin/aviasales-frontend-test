@@ -1,15 +1,14 @@
-import { TicketType, Segment } from "../data/ticketsTypes";
-import { SelectedFiltersArray, FilterType } from "../data/filtersTypes";
+import { TicketType, Segment, FilterType } from "../data/types.d";
 
 const filterTickets = (
   ticketsArray: TicketType[],
-  selectedFiltersArray: SelectedFiltersArray
-) => {
+  filtersArray: FilterType[]
+): TicketType[] => {
   let resultTicketsArray: TicketType[] = [];
-  if (selectedFiltersArray[0].id === "all") {
+  if (filtersArray[0].id === "all") {
     resultTicketsArray = ticketsArray;
   } else {
-    selectedFiltersArray.forEach((filterVariant: FilterType) => {
+    filtersArray.forEach((filterVariant: FilterType) => {
       ticketsArray
         .filter((item: TicketType) => {
           const maxStopsCountInTicket: number =

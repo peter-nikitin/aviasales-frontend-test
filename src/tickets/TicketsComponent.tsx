@@ -4,13 +4,11 @@ import Tickets from "./Tickets";
 
 import addIdsToTickets from "../utils/addIdsToTickets";
 
-import { TicketsArrayType, TicketType } from "../data/ticketsTypes";
-import { SelectedFiltersArray, FilterType } from "../data/filtersTypes";
-import SortingType from "../data/sortingTypes";
+import { SortingType, TicketType, FilterType } from "../data/types.d";
 
 import collectFiltersFromTickets from "../modules/collectFiltersFromTickets";
 import handleSelectedFiltersChange from "../utils/handleSelectedFiltersChange";
-import useSortableTickets from "../modules/sortTickets";
+import useSortableTickets from "./useSortableTickets";
 import filterTickets from "../modules/filterTickets";
 
 import ticketsMocks from "../data/mocks/ticketsMocks";

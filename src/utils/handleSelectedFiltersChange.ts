@@ -1,17 +1,11 @@
 import React from "react";
-import {
-  FilterType,
-  SelectedFiltersArray,
-  FilterArray,
-} from "../data/filtersTypes";
+import { FilterType } from "../data/types.d";
 
 const handleSelectedFiltersChange = (
   clickedFilter: string,
-  selectedFilters: SelectedFiltersArray,
-  setSelectedFilters: React.Dispatch<
-    React.SetStateAction<SelectedFiltersArray>
-  >,
-  allFilters: FilterArray
+  selectedFilters: FilterType[],
+  setSelectedFilters: React.Dispatch<React.SetStateAction<FilterType[]>>,
+  allFilters: FilterType[]
 ): void => {
   if (selectedFilters.filter((item) => item.id === clickedFilter).length > 0) {
     const newFilters: FilterType[] = selectedFilters.filter(

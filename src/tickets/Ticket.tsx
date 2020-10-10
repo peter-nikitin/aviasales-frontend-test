@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 
 import { createUseStyles } from "react-jss";
 
-import { TicketType } from "../data/ticketsTypes";
+import { TicketType } from "../data/types.d";
 
 import SegmentInTicket from "./Segment";
 

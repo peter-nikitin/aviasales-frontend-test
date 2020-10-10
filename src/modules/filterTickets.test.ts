@@ -1,8 +1,6 @@
 import filterTickets from "./filterTickets";
-import { smallTicketsMock } from "../data/mocks/ticketsMocks";
-import { selectedFiltersArrayMock } from "../data/mocks/filtersMocks";
 
-import { TicketType } from "../data/ticketsTypes";
+import { TicketType } from "../data/types.d";
 
 describe("Filtering of tickets", () => {
   it("should return same array if selected ALL", () => {

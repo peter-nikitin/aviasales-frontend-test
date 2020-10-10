@@ -1,7 +1,7 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
 
-import SortingType from "../data/sortingTypes";
+import SortingType from "../data/types.d";
 
 const useStyle = createUseStyles({
   buttons: {

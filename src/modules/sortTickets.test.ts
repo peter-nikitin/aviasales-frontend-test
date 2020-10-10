@@ -1,8 +1,6 @@
 import sortTickets from "./sortTickets";
-import { smallTicketsMock } from "../data/mocks/ticketsMocks";
-import { selectedFiltersArrayMock } from "../data/mocks/filtersMocks";
 
-import { TicketType } from "../data/ticketsTypes";
+import { TicketType } from "../data/types.d";
 
 describe("Sorting of tickets", () => {
   it("should sort by price", () => {

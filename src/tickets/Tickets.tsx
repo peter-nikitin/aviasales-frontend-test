@@ -5,9 +5,7 @@ import Filter from "./Filter";
 import Tabs from "./Tabs";
 import TicketList from "./TicketList";
 
-import { TicketsArrayType, TicketType } from "../data/ticketsTypes";
-import { SelectedFiltersArray, FilterType } from "../data/filtersTypes";
-import SortingType from "../data/sortingTypes";
+import { FilterType, TicketType, SortingType } from "../data/types.d";
 
 const useStyle = createUseStyles({
   tickets: {
@@ -21,9 +19,9 @@ const useStyle = createUseStyles({
 });
 
 interface TicketsProps {
-  tickets: TicketsArrayType;
+  tickets: TicketType[];
   handleFilterChange: (newFilter: string) => void;
-  selectedFilters: SelectedFiltersArray;
+  selectedFilters: FilterType[];
   allFilters: FilterType[];
   sorting: string;
   setSorting: React.Dispatch<React.SetStateAction<SortingType>>;

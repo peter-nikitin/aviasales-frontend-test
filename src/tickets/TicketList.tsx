@@ -1,9 +1,9 @@
 import React from "react";
-import { TicketsArrayType, TicketType } from "../data/ticketsTypes";
+import { TicketType } from "../data/types.d";
 import Ticket from "./Ticket";
 
 interface ITicketsListProps {
-  ticketsArray: TicketsArrayType;
+  ticketsArray: TicketType[];
 }
 
 const TicketList: React.FunctionComponent<ITicketsListProps> = ({

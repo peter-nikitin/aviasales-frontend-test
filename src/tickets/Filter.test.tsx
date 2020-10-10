@@ -4,13 +4,13 @@ import FiltersSelection from "./Filter";
 
 import {
   filtersArrayMock,
-  selectedFiltersArrayMock,
+  selectedFiltersMock,
 } from "../data/mocks/filtersMocks";
-import { SelectedFiltersArray } from "../data/filtersTypes";
+import { FilterType } from "../data/types.d";
 
 describe("Filters", () => {
   let changeFilterTest: jest.Mock<void, [string]>;
-  let selectedFiltersTest: SelectedFiltersArray;
+  let selectedFiltersTest: FilterType[];
 
   it("should render header", () => {
     changeFilterTest = jest.fn();
@@ -62,7 +62,7 @@ describe("Filters", () => {
 
   it("should render checked filters", () => {
     changeFilterTest = jest.fn();
-    selectedFiltersTest = selectedFiltersArrayMock;
+    selectedFiltersTest = selectedFiltersMock;
 
     const { getByText } = render(
       <FiltersSelection

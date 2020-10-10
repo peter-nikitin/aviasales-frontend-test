@@ -1,18 +1,14 @@
 import React, { FunctionComponent } from "react";
 import { createUseStyles } from "react-jss";
 
-import {
-  FilterArray,
-  FilterType,
-  SelectedFiltersArray,
-} from "../data/filtersTypes";
+import { FilterType } from "../data/types.d";
 
 import selected from "../assets/selected.svg";
 
 interface FiltersSelection {
   handleFilterChange: (clickedFilter: string) => void;
-  selectedFilters: SelectedFiltersArray;
-  filtersArray: FilterArray;
+  selectedFilters: FilterType[];
+  filtersArray: FilterType[];
 }
 
 const useStyle = createUseStyles({

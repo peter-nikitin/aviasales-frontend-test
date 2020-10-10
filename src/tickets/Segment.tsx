@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import { createUseStyles } from "react-jss";
 import moment from "moment";
 
-import { Segment } from "../data/ticketsTypes";
+import { Segment } from "../data/types.d";
 
 const useStyle = createUseStyles({
   segmentLine: {

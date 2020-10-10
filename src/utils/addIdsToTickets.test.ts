@@ -1,5 +1,5 @@
 import addIdsToTickets from "./addIdsToTickets";
-import { TicketType, TicketsArrayType } from "../data/ticketsTypes";
+import { TicketType, TicketsArrayType } from "../data/types.d";
 
 it("should return a ticket with ID", () => {
   const ticket = [
