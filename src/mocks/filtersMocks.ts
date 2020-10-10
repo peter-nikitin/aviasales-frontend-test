@@ -1,4 +1,4 @@
-import { FilterType } from "../types";
+import { FilterType } from "../data/types.d";
 
 export const filtersArrayMock: FilterType[] = [
   {

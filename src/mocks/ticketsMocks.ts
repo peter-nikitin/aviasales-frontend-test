@@ -1,4 +1,4 @@
-import { TicketType } from "../types";
+import { TicketType } from "../data/types.d";
 
 const ticketsMocks: TicketType[] = [
   {
