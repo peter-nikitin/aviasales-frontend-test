@@ -2,22 +2,29 @@ import React, { useState, useEffect } from "react";
 
 import Tickets from "./Tickets";
 
-import addIdsToTickets from "../../utils/addIdsToTickets";
+import {
+  SortingType,
+  TicketType,
+  FilterType,
+  SearchIdType,
+} from "../../data/types.d";
 
-import { SortingType, TicketType, FilterType } from "../../data/types.d";
+import {
+  collectFiltersFromTickets,
+  handleSelectedFiltersChange,
+  useSortableTickets,
+  filterTickets,
+  addIdsToTickets,
+} from "../../utils";
 
-import collectFiltersFromTickets from "../../modules/collectFiltersFromTickets";
-import handleSelectedFiltersChange from "../../utils/handleSelectedFiltersChange";
-import useSortableTickets from "../../utils/useSortableTickets";
-import filterTickets from "../../modules/filterTickets";
+import getAllTickets from "../../utils/api";
 
 import ticketsMocks from "../../mocks/ticketsMocks";
 
-const TicketsComponent = () => {
+const TicketsComponent: React.FunctionComponent = () => {
   const [allFilters, setAllFilters] = useState([] as FilterType[]);
-  const [allTickets, setAllTickets] = useState(
-    addIdsToTickets(ticketsMocks) as TicketType[]
-  );
+  const [allTickets, setAllTickets] = useState([] as TicketType[]);
+  const [isLoading, setLoading] = useState(true);
 
   const [sorting, setSorting] = useState("cheapest" as SortingType);
 
@@ -30,6 +37,12 @@ const TicketsComponent = () => {
       stopsCount: -1,
     },
   ]);
+
+  useEffect(() => {
+    getAllTickets(setAllTickets, addIdsToTickets)
+      .then(() => setLoading(false))
+      .catch((err: Error) => console.log(err));
+  }, []);
 
   useEffect(() => {
     setAllFilters(collectFiltersFromTickets(allTickets));
@@ -56,6 +69,7 @@ const TicketsComponent = () => {
       selectedFilters={selectedFilters}
       sorting={sorting}
       setSorting={setSorting}
+      isLoading={isLoading}
     />
   );
 };
