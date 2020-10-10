@@ -5,8 +5,8 @@ import FiltersSelection from "./Filter";
 import {
   filtersArrayMock,
   selectedFiltersMock,
-} from "../data/mocks/filtersMocks";
-import { FilterType } from "../data/types.d";
+} from "../../mocks/filtersMocks";
+import { FilterType } from "../../data/types.d";
 
 describe("Filters", () => {
   let changeFilterTest: jest.Mock<void, [string]>;

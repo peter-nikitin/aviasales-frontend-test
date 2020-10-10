@@ -2,9 +2,9 @@ import React, { FunctionComponent } from "react";
 
 import { createUseStyles } from "react-jss";
 
-import { TicketType } from "../data/types.d";
+import { TicketType } from "../../data/types.d";
 
-import SegmentInTicket from "./Segment";
+import SegmentInTicket from "./segments/Segment";
 
 const useStyle = createUseStyles({
   ticket: {

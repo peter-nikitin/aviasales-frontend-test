@@ -1,11 +1,11 @@
 import React, { FunctionComponent, useState, useEffect } from "react";
 import { createUseStyles } from "react-jss";
 
-import Filter from "./Filter";
-import Tabs from "./Tabs";
+import Filter from "../filters/Filter";
+import Tabs from "../tabs/Tabs";
 import TicketList from "./TicketList";
 
-import { FilterType, TicketType, SortingType } from "../data/types.d";
+import { FilterType, TicketType, SortingType } from "../../data/types.d";
 
 const useStyle = createUseStyles({
   tickets: {

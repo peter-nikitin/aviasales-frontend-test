@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from "react";
 import { createUseStyles } from "react-jss";
 
-import { FilterType } from "../data/types.d";
+import { FilterType } from "../../data/types.d";
 
-import selected from "../assets/selected.svg";
+import selected from "../../assets/selected.svg";
 
 interface FiltersSelection {
   handleFilterChange: (clickedFilter: string) => void;

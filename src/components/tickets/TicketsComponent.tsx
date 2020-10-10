@@ -2,16 +2,16 @@ import React, { useState, useEffect } from "react";
 
 import Tickets from "./Tickets";
 
-import addIdsToTickets from "../utils/addIdsToTickets";
+import addIdsToTickets from "../../utils/addIdsToTickets";
 
-import { SortingType, TicketType, FilterType } from "../data/types.d";
+import { SortingType, TicketType, FilterType } from "../../data/types.d";
 
-import collectFiltersFromTickets from "../modules/collectFiltersFromTickets";
-import handleSelectedFiltersChange from "../utils/handleSelectedFiltersChange";
-import useSortableTickets from "./useSortableTickets";
-import filterTickets from "../modules/filterTickets";
+import collectFiltersFromTickets from "../../modules/collectFiltersFromTickets";
+import handleSelectedFiltersChange from "../../utils/handleSelectedFiltersChange";
+import useSortableTickets from "../../utils/useSortableTickets";
+import filterTickets from "../../modules/filterTickets";
 
-import ticketsMocks from "../data/mocks/ticketsMocks";
+import ticketsMocks from "../../mocks/ticketsMocks";
 
 const TicketsComponent = () => {
   const [allFilters, setAllFilters] = useState([] as FilterType[]);

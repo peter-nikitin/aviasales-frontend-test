@@ -1,5 +1,5 @@
 import React from "react";
-import { TicketType } from "../data/types.d";
+import { TicketType } from "../../data/types.d";
 import Ticket from "./Ticket";
 
 interface ITicketsListProps {
