@@ -1,6 +1,6 @@
-import { TicketType, TicketsArrayType } from "../data/types.d";
+import { TicketType } from "../data/types.d";
 
-const addIdsToTickets = (tickets: TicketsArrayType): TicketsArrayType =>
+const addIdsToTickets = (tickets: TicketType[]): TicketType[] =>
   tickets.map((ticket, index) => ({ ...ticket, id: index + 1 }));
 
 export default addIdsToTickets;
