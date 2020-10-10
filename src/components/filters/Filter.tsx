@@ -47,6 +47,7 @@ const useStyle = createUseStyles({
     fontSize: 13,
     "&:hover": {
       backgroundColor: "#F1FCFF",
+      cursor: "pointer",
     },
     "&:before": {
       content: '""',
@@ -74,6 +75,7 @@ const useStyle = createUseStyles({
     boxShadow: " 0px 2px 8px rgba(0, 0, 0, 0.1)",
     borderRadius: 5,
     marginRight: 20,
+    position: "sticky",
   },
 });
 
