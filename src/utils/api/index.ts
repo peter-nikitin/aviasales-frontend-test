@@ -17,6 +17,7 @@ const getAllTickets: GetAllTickets = async (setResults, updateResults) => {
         setResults(updateResults(ticketsFromApi));
       }
     }
+    return true;
   } catch (error) {
     return error;
   }
