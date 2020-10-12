@@ -4,27 +4,19 @@ import { SearchResultType, TicketType } from "../../data/types.d";
 
 const getTickets = async (searchId: string) => {
   let recursiveResult;
+  let result: AxiosResponse<SearchResultType>;
   const resultTickets: TicketType[] = [];
+  const url = `https://front-test.beta.aviasales.ru/tickets?searchId=${searchId}`;
   try {
-    const result: Error | AxiosResponse<SearchResultType> = await axios.get(
-      `https://front-test.beta.aviasales.ru/tickets?searchId=${searchId}`
-    );
-
-    if (result instanceof Error) {
-      throw result;
-    } else {
+    result = await axios.get(url);
+    if (result.status === 200) {
       result.data.tickets.forEach((item) => resultTickets.push(item));
-    }
-    if (!result.data.stop) {
-      // recursiveResult = await getTickets(searchId);
-      // if (recursiveResult instanceof Error) {
-      //   throw recursiveResult;
-      // } else {
-      //   recursiveResult.forEach((item) => resultTickets.push(item));
-      // }
     }
     return resultTickets;
   } catch (error) {
+    if (error.status > 500) {
+      getTickets(searchId);
+    }
     return new Error(error);
   }
 };
