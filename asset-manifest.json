@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/aviasales-frontend-test/static/css/main.246844d0.chunk.css",
+    "main.js": "/aviasales-frontend-test/static/js/main.bc512442.chunk.js",
+    "main.js.map": "/aviasales-frontend-test/static/js/main.bc512442.chunk.js.map",
+    "runtime-main.js": "/aviasales-frontend-test/static/js/runtime-main.838cec6a.js",
+    "runtime-main.js.map": "/aviasales-frontend-test/static/js/runtime-main.838cec6a.js.map",
+    "static/js/2.9bc29093.chunk.js": "/aviasales-frontend-test/static/js/2.9bc29093.chunk.js",
+    "static/js/2.9bc29093.chunk.js.map": "/aviasales-frontend-test/static/js/2.9bc29093.chunk.js.map",
+    "index.html": "/aviasales-frontend-test/index.html",
+    "precache-manifest.04b03c929e11be1ba7ea8b5e26de2d7b.js": "/aviasales-frontend-test/precache-manifest.04b03c929e11be1ba7ea8b5e26de2d7b.js",
+    "service-worker.js": "/aviasales-frontend-test/service-worker.js",
+    "static/css/main.246844d0.chunk.css.map": "/aviasales-frontend-test/static/css/main.246844d0.chunk.css.map",
+    "static/js/2.9bc29093.chunk.js.LICENSE.txt": "/aviasales-frontend-test/static/js/2.9bc29093.chunk.js.LICENSE.txt",
+    "static/media/Logo.svg": "/aviasales-frontend-test/static/media/Logo.0c089234.svg",
+    "static/media/selected.svg": "/aviasales-frontend-test/static/media/selected.68ca57dc.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.838cec6a.js",
+    "static/js/2.9bc29093.chunk.js",
+    "static/css/main.246844d0.chunk.css",
+    "static/js/main.bc512442.chunk.js"
+  ]
+}
