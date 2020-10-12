@@ -4,17 +4,21 @@ import getSearchId from "./getSearchId";
 import { GetAllTickets } from "../../data/types.d";
 
 const getAllTickets: GetAllTickets = async (setResults, updateResults) => {
-  const search = await getSearchId();
-  if (search instanceof Error) {
-    throw search;
-  } else {
-    const ticketsFromApi = await getTickets(search.data.searchId);
-
-    if (ticketsFromApi instanceof Error) {
-      throw ticketsFromApi;
+  try {
+    const search = await getSearchId();
+    if (search instanceof Error) {
+      throw search;
     } else {
-      setResults(updateResults(ticketsFromApi));
+      const ticketsFromApi = await getTickets(search.data.searchId);
+
+      if (ticketsFromApi instanceof Error) {
+        throw ticketsFromApi;
+      } else {
+        setResults(updateResults(ticketsFromApi));
+      }
     }
+  } catch (error) {
+    return error;
   }
 };
 
