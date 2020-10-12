@@ -2,6 +2,10 @@
 
 Create React App + TypeScript
 
+## Превью
+
+[Github pages](https://peter-nikitin.github.io/aviasales-frontend-test/)
+
 ### Запуск в development
 
 `npm run start`.<br />
