@@ -9,6 +9,7 @@ describe("get tickets", () => {
 
   it("should run once and return array", async () => {
     const mockTickets = {
+      status: 200,
       data: {
         tickets: [
           {
@@ -107,18 +108,21 @@ describe("get tickets", () => {
     ];
 
     const mockFirstRequest = {
+      status: 200,
       data: {
         tickets: [tickets[0]],
         stop: false,
       },
     };
     const mockSecondRequest = {
+      status: 200,
       data: {
         tickets: [tickets[1]],
         stop: false,
       },
     };
     const mockThirdRequest = {
+      status: 200,
       data: {
         tickets: [tickets[2]],
         stop: true,
